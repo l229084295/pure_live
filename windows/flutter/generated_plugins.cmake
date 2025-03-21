@@ -7,7 +7,6 @@ list(APPEND FLUTTER_PLUGIN_LIST
   battery_plus
   connectivity_plus
   dynamic_color
-  flutter_inappwebview_windows
   flutter_js
   flutter_volume_controller
   media_kit_libs_windows_video

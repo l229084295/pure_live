@@ -12,7 +12,7 @@ import 'package:pure_live/modules/live_play/load_type.dart';
 import 'package:pure_live/core/danmaku/douyin_danmaku.dart';
 import 'package:pure_live/core/interface/live_danmaku.dart';
 
-class LivePlayController extends StateController {
+class LivePlayController extends GetxController  {
   LivePlayController({
     required this.room,
     required this.site,

@@ -30,7 +30,8 @@ class CupertinoSwitchListTile extends StatelessWidget {
       },
       trailing: CupertinoSwitch(
         value: value,
-        activeTrackColor: activeColor,
+        trackColor: activeColor?.withOpacity(0.5), // 半透明轨道颜色
+        activeColor: activeColor,
         onChanged: onChanged,
       ),
     );

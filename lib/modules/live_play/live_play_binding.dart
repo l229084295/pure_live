@@ -1,14 +1,12 @@
 import 'package:get/get.dart';
 import 'package:pure_live/modules/live_play/live_play_controller.dart';
 
-class LivePlayBinding extends Binding {
+class LivePlayBinding extends Bindings {
   @override
-  List<Bind> dependencies() {
-    return [
-      Bind.lazyPut(() => LivePlayController(
+  void dependencies() {
+    Get.lazyPut(() => LivePlayController(
             room: Get.arguments,
             site: Get.parameters["site"] ?? "",
-          ))
-    ];
+          ));
   }
 }

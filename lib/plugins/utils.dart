@@ -123,7 +123,7 @@ class Utils {
                 ),
                 Divider(
                   height: 1,
-                  color: Colors.grey.withValues(alpha: .1),
+                  color: Colors.grey.withOpacity(.1),
                 ),
                 Expanded(
                   child: child,

@@ -41,8 +41,9 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin,
       },
     );
     addToOverlay();
-    favoriteController.tabBottomIndex.addListener(() {
-      setState(() => _selectedIndex = favoriteController.tabBottomIndex.value);
+    // 修复监听逻辑
+    favoriteController.tabBottomIndex.listen((value) {
+      setState(() => _selectedIndex = value);
     });
   }
 
@@ -109,10 +110,10 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin,
     }
   }
 
-  void onBackButtonPressed(canPop, _) async {
-    if (canPop) {
+  void onBackButtonPressed(bool didPop) async {
+    if (!didPop) {
       final moveToDesktopPlugin = MoveToDesktop();
-      moveToDesktopPlugin.moveToDesktop();
+      await moveToDesktopPlugin.moveToDesktop();
     }
   }
 
@@ -121,7 +122,7 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin,
     super.build(context);
     return PopScope(
       canPop: Get.currentRoute == RoutePath.kInitial,
-      onPopInvokedWithResult: onBackButtonPressed,
+      onPopInvoked: (bool didPop) => onBackButtonPressed(didPop),
       child: LayoutBuilder(
         builder: (context, constraint) => constraint.maxWidth <= 680
             ? HomeMobileView(

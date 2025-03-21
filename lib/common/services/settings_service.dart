@@ -2,9 +2,9 @@ import 'dart:io';
 import 'dart:convert';
 import 'package:get/get.dart';
 import 'package:pure_live/common/index.dart';
+import 'package:pure_live/common/utils/color_tools.dart';
 import 'package:stop_watch_timer/stop_watch_timer.dart';
 import 'package:flutter_exit_app/flutter_exit_app.dart';
-import 'package:flex_color_picker/flex_color_picker.dart';
 import 'package:pure_live/common/services/bilibili_account_service.dart';
 
 class SettingsService extends GetxController {
@@ -192,7 +192,7 @@ class SettingsService extends GetxController {
 
   final StopWatchTimer _stopWatchTimer = StopWatchTimer(mode: StopWatchMode.countDown); // Create instance.
 
-  final themeColorSwitch = (PrefUtil.getString('themeColorSwitch') ?? Colors.blue.hex).obs;
+  final themeColorSwitch = (PrefUtil.getString('themeColorSwitch') ?? Colors.blue.toHex()).obs;
 
   StopWatchTimer get stopWatchTimer => _stopWatchTimer;
 
@@ -498,7 +498,7 @@ class SettingsService extends GetxController {
     playerCompatMode.value = json['playerCompatMode'] ?? false;
     bilibiliCookie.value = json['bilibiliCookie'] ?? '';
     huyaCookie.value = json['huyaCookie'] ?? '';
-    themeColorSwitch.value = json['themeColorSwitch'] ?? Colors.blue.hex;
+    themeColorSwitch.value = json['themeColorSwitch'] ?? Colors.blue.toHex();
     changeThemeMode(themeModeName.value);
     changeThemeColorSwitch(themeColorSwitch.value);
     setBilibiliCookit(bilibiliCookie.value);
