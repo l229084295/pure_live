@@ -16,7 +16,8 @@ void main(List<String> args) async {
   // MediaKit.ensureInitialized();
   if (Platform.isWindows) {
     register(kWindowsScheme);
-    await WindowsSingleInstance.ensureSingleInstance(args, "pure_live_instance_checker");
+    await WindowsSingleInstance.ensureSingleInstance(
+        args, "pure_live_instance_checker");
     await windowManager.ensureInitialized();
     await WindowUtil.init(width: 1280, height: 720);
   }
@@ -25,12 +26,11 @@ void main(List<String> args) async {
   // 初始化服务
   initService();
   initRefresh();
-  runApp(const MyAppTest());
+  // runApp(const MyAppTest());
   runApp(const MyApp());
 }
 
 void initService() {
-  Get.put(AuthController());
   Get.put(SettingsService());
   Get.put(FavoriteController());
   Get.put(PopularController());
@@ -116,17 +116,24 @@ class _MyAppState extends State<MyApp> with WindowListener {
         builder: (lightDynamic, darkDynamic) {
           return Obx(() {
             var themeColor = HexColor(settings.themeColorSwitch.value);
-            ThemeData lightTheme = MyTheme(primaryColor: themeColor).lightThemeData;
-            ThemeData darkTheme = MyTheme(primaryColor: themeColor).darkThemeData;
+            ThemeData lightTheme =
+                MyTheme(primaryColor: themeColor).lightThemeData;
+            ThemeData darkTheme =
+                MyTheme(primaryColor: themeColor).darkThemeData;
             if (settings.enableDynamicTheme.value) {
               lightTheme = MyTheme(colorScheme: lightDynamic).lightThemeData;
               darkTheme = MyTheme(colorScheme: darkDynamic).darkThemeData;
             }
             return GetMaterialApp(
               title: '纯粹直播',
-              themeMode: SettingsService.themeModes[settings.themeModeName.value]!,
-              theme: lightTheme.copyWith(appBarTheme: AppBarTheme(surfaceTintColor: Colors.transparent)),
-              darkTheme: darkTheme.copyWith(appBarTheme: AppBarTheme(surfaceTintColor: Colors.transparent)),
+              themeMode:
+                  SettingsService.themeModes[settings.themeModeName.value]!,
+              theme: lightTheme.copyWith(
+                  appBarTheme:
+                      AppBarTheme(surfaceTintColor: Colors.transparent)),
+              darkTheme: darkTheme.copyWith(
+                  appBarTheme:
+                      AppBarTheme(surfaceTintColor: Colors.transparent)),
               locale: SettingsService.languages[settings.languageName.value]!,
               navigatorObservers: [FlutterSmartDialog.observer],
               builder: FlutterSmartDialog.init(),

@@ -5,13 +5,13 @@
         "name": "default",
         "type": "HarmonyOS",
         "material": {
-          "certpath": "C:\\Users\\Bafahua\\.ohos\\config\\default_ohos_BeYyhlW2x2tQY8IMTmzpnmewm3CA2X7E1RL9SuSMGJM=.cer",
-          "storePassword": "0000001AF7DE9B0CB9EDECD34E41551F1324F1D77968EFD96F60F9BD0AD470E137A5D742AF38F25C9FA9",
+          "certpath": "C:\\Users\\Bafahua\\.ohos\\config\\default_ohos_YxhmVahK4Azy8MAnhZNIzterh7Tngdi6qGSkkprHGEA=.cer",
+          "storePassword": "0000001BD78A2344B1898C29AEEB07A8F48744C09CD28D8AC1B8D614923F651A98868F9B7A1BB6C54E9A1E",
           "keyAlias": "debugKey",
-          "keyPassword": "0000001A9071CA9072B2C4EF917F1F9C050A66FE2095F3264B8274EBF0754E9334CE501F7734A81EEF1A",
-          "profile": "C:\\Users\\Bafahua\\.ohos\\config\\default_ohos_BeYyhlW2x2tQY8IMTmzpnmewm3CA2X7E1RL9SuSMGJM=.p7b",
+          "keyPassword": "0000001B9741EAC67A472FA42B420750262ECDBDE95A99B43147410F5E632ACA6109451BE47355EB10420E",
+          "profile": "C:\\Users\\Bafahua\\.ohos\\config\\default_ohos_YxhmVahK4Azy8MAnhZNIzterh7Tngdi6qGSkkprHGEA=.p7b",
           "signAlg": "SHA256withECDSA",
-          "storeFile": "C:\\Users\\Bafahua\\.ohos\\config\\default_ohos_BeYyhlW2x2tQY8IMTmzpnmewm3CA2X7E1RL9SuSMGJM=.p12"
+          "storeFile": "C:\\Users\\Bafahua\\.ohos\\config\\default_ohos_YxhmVahK4Azy8MAnhZNIzterh7Tngdi6qGSkkprHGEA=.p12"
         }
       }
     ],

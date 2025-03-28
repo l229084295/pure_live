@@ -143,7 +143,9 @@ class AppPages {
     ),
     GetPage(name: RoutePath.kUserManage, page: () => const UserManager()),
 
-    GetPage(name: RoutePath.kVersionHistory, page: () => const VersionHistoryPage()),
+    GetPage(
+        name: RoutePath.kVersionHistory,
+        page: () => const VersionHistoryPage()),
 
     GetPage(
       name: RoutePath.kToolbox,
